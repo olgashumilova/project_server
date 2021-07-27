@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "name": "Overwatch",
+        "ageLimit": "12 +",
+        "rating": 5,
+        "image": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+        "description": "Overwatch is a colorful team-based action game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat."
+    },
+
+    {
+        "id": 2,
+        "name": "Minecraft",
+        "ageLimit": "3 +",
+        "rating": 4,
+        "image": "https://www.minecraft.net/content/dam/minecraft/home/Games_Subnav_Minecraft-228x350.png",
+        "description": "Minecraft is a sandbox game. There is a virtual land where users can create their own worlds and experiences, using building blocks, resources discovered on the site and their own creativity."
+    },
+
+    {
+        "id": 3,
+        "name": "Terraria",
+        "ageLimit": "6 +",
+        "rating": 4,
+        "image": "https://cdn.kanobu.ru/c/7b6e22e0e976b3d2fb7559d81509e252/400x510/cdn.kanobu.ru/games/11098/cf8f300f-8d65-495b-9b41-78654a988302.jpg",
+        "description": "Terraria is a 2D sandbox game with gameplay that revolves around exploration, building, crafting, combat, survival, and mining, playable in both single-player and multiplayer modes."
+    },
+
+    {
+        "id": 4,
+        "name": "The Witcher 3: Wild Hunt",
+        "ageLimit": "16 +",
+        "rating": 5,
+        "image": "https://upload.wikimedia.org/wikipedia/ru/thumb/a/a2/The_Witcher_3-_Wild_Hunt_Cover.jpg/266px-The_Witcher_3-_Wild_Hunt_Cover.jpg",
+        "description": "The Witcher 3: Wild Hunt is an action role-playing game with a third-person perspective. Players control Geralt of Rivia, a monster slayer known as a Witcher."
+    },
+
+    {
+        "id": 5,
+        "name": "Assassin's Creed Valhalla",
+        "ageLimit": "18 +",
+        "rating": 5,
+        "image": "https://upload.wikimedia.org/wikipedia/ru/2/26/AC_Valhalla_standard_edition.jpg",
+        "description": "In Assassin's Creed Valhalla, become Eivor, a legendary Viking raider on a quest for glory. Explore a dynamic and beautiful open world set against the brutal backdrop of England's Dark Ages."
+    },
+
+    {
+        "id": 6,
+        "name": "Cyberpunk 2077",
+        "ageLimit": "18 +",
+        "rating": 3,
+        "image": "https://upload.wikimedia.org/wikipedia/ru/b/bb/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D0%B8%D0%B3%D1%80%D1%8B_Cyberpunk_2077.jpg",
+        "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification."
+    }
+]
