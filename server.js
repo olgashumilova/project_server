@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors')
 const arrayOfGames = require('./games.json');
+const multer  = require('multer')
+var bodyParser = require('body-parser')
+const upload = multer({ dest: 'uploads/' })
 const app = express();
 
 app.use(cors())
@@ -20,7 +23,8 @@ app.get(`/search/:text`, (req, res) => {
   })
 
   res.send(arrOfNames)
-  res.status = 200
+  res.sendStatus = 200
+  if (!req.body) return res.sendStatus(400);
 })
 
 app.get('/getTopGames', (_req, res) => {
@@ -38,5 +42,29 @@ app.get('/getTopGames', (_req, res) => {
   }
 
   res.send(topGames)
-  res.status = 200
+  res.sendStatus = 200
+  if (!req.body) return res.sendStatus(400);
 })
+
+app.post('/signup', async (req, res) => {
+  try {
+    let { login, password } = req.body
+    res.send(login, password)
+  } catch (err) {
+      console.log(err);
+      res.send(err.message)
+      res.sendStatus(400)
+    }
+})
+
+// app.post(`/sign-in`, (req, res) => {
+//   let login = req.params.login
+//   let password = req.params.password
+ 
+//   if (login && password) {
+//     res.send(login, password)
+//   } else {
+//     res.send('No data')
+//   }
+//   res.status = 200
+// })
