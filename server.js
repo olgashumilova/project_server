@@ -1,13 +1,18 @@
 const express = require('express');
 const cors = require('cors')
-const arrayOfGames = require('./games.json');
 const multer  = require('multer')
-var bodyParser = require('body-parser')
-const upload = multer({ dest: 'uploads/' })
+const bodyParser = require('body-parser')
 const app = express();
+const arrayOfGames = require('./games.json');
 
+app.use(
+  express.json({
+    extended: false
+  })
+);
 app.use(cors())
-app.use(express.static('public'));
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 
 const PORT = 3001
 app.listen(PORT, () => {
@@ -46,25 +51,32 @@ app.get('/getTopGames', (_req, res) => {
   if (!req.body) return res.sendStatus(400);
 })
 
-app.post('/signup', async (req, res) => {
-  try {
-    let { login, password } = req.body
-    res.send(login, password)
-  } catch (err) {
-      console.log(err);
-      res.send(err.message)
-      res.sendStatus(400)
-    }
+app.post('/signup', (req, res) => {
+  let {login, password} = req.body
+  if (!login && !password) {
+    res.send('Enter data')
+  } else if (login && password) {
+    res.send('You\'ve been signed up!')
+    res.sendStatus(200)
+  } else if (!login) {
+    res.send('Enter login')
+  } else if (!password) {
+    res.send('Enter password')
+  }
+  if (!req.body) return res.sendStatus(400);
 })
 
-// app.post(`/sign-in`, (req, res) => {
-//   let login = req.params.login
-//   let password = req.params.password
- 
-//   if (login && password) {
-//     res.send(login, password)
-//   } else {
-//     res.send('No data')
-//   }
-//   res.status = 200
-// })
+app.post(`/signin`, (req, res) => {
+  let {login, password} = req.body
+  if (!login && !password) {
+    res.send('Enter data')
+  } else if (login && password) {
+    res.send('Welcome!')
+    res.sendStatus(200)
+  } else if (!login) {
+    res.send('Enter login')
+  } else if (!password) {
+    res.send('Enter password')
+  }
+  if (!req.body) return res.sendStatus(400);
+})
