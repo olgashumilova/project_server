@@ -115,6 +115,7 @@ app.post(`/signin`, async (req, res) => {
       } else if (!password) {
         res.send('Enter password')
       }
+
     } else {
       res.send('Sign up first')
     }
@@ -133,4 +134,29 @@ app.get('/getUsersArray', (_req, res) => {
 app.get('/getProducts', (_req, res) => {
   res.send(arrayOfGames)
   res.sendStatus = 200
+})
+
+app.post('/changePassword', async (req, res) => {
+  let { password } = req.body
+  res.send(`Your pass is - ${password}`)
+
+  // const correctPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g.test(password)
+  // const salt = await bcrypt.genSalt(10)
+  // const validPassword = await bcrypt.compare(newPassword, password)
+
+  // for (let i = 0; i < arrayOfUsers.length; i++) {
+  //   let oldPasswordHash = arrayOfUsers[i].password 
+  // }
+
+
+  // if (password) {
+  //   if (!correctPass) {
+  //     res.send('Password must contain minimum eight characters, at least one letter and one number')
+  //   } else if (correctPass) {
+  //     res.send('Password changed successfully')
+  //   }
+  // } else if (!password) {
+  //   res.send('Enter data')
+  // }
+  // res.sendStatus = 200
 })
