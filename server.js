@@ -66,7 +66,7 @@ app.post('/signup', async (req, res) => {
 
     for (let i = 0; i < arrayOfUsers.length; i++) {
       if (login === arrayOfUsers[i].login) {
-        res.send('This login has already taken')
+        res.send('This login is already taken')
       }
     }
     
@@ -74,9 +74,12 @@ app.post('/signup', async (req, res) => {
       res.send('Password must contain minimum eight characters, at least one letter and one number')
     } else if (correctPass) {
       isSignedUp = true
-      arrayOfUsers.push({login: login, isSignedUp: isSignedUp, password: signUpHash})
-      res.send('You\'ve been signed up!')
-      res.sendStatus(200)
+      arrayOfUsers.push({id: arrayOfUsers.length, login: login, isSignedUp: isSignedUp, password: signUpHash})
+      for (let i = 0; i < arrayOfUsers.length; i++) {
+        res.send(arrayOfUsers[i])
+        res.sendStatus(200)
+        
+      }
     }
 
   } else if (!login) {
@@ -97,18 +100,16 @@ app.post(`/signin`, async (req, res) => {
       if (!login && !password) {
         res.send('Enter data')
       } else if (login && password) {
-    
         for (let i = 0; i < arrayOfUsers.length; i++) {
           if (arrayOfUsers[i].login !== login) {
             res.send('This user doesn\'t exist')
           } else if (!validPassword) {
             res.send('Enter valid password')
           } else if (validPassword) {
-            res.send(`Welcome, ${arrayOfUsers[i].login}!`)
+            res.send(arrayOfUsers[i])
             res.sendStatus(200)
           }
         }
-    
       } else if (!login) {
         res.send('Enter login')
       } else if (!password) {
@@ -121,12 +122,15 @@ app.post(`/signin`, async (req, res) => {
     res.send(error)
   }
 
-
   if (!req.body) return res.sendStatus(400);
 })
 
 app.get('/getUsersArray', (_req, res) => {
   res.send(arrayOfUsers)
   res.sendStatus = 200
-  if (!req.body) return res.sendStatus(400);
+})
+
+app.get('/getProducts', (_req, res) => {
+  res.send(arrayOfGames)
+  res.sendStatus = 200
 })
