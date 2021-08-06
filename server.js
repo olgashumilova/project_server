@@ -26,6 +26,7 @@ app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`)
 });
 
+// Searh games
 app.get(`/search/:text`, (req, res) => {
   let userText = req.params.text.toLowerCase()
 
@@ -38,6 +39,7 @@ app.get(`/search/:text`, (req, res) => {
   if (!req.body) return res.sendStatus(400);
 })
 
+// Get top games and render on UI
 app.get('/getTopGames', (req, res) => {
   let topGames = []
   let count = 0;
@@ -54,6 +56,7 @@ app.get('/getTopGames', (req, res) => {
   if (!req.body) return res.sendStatus(400);
 })
 
+// User sign up
 app.post('/signup', async (req, res) => {
   let {login, password} = req.body
   const correctPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g.test(password)
@@ -78,10 +81,8 @@ app.post('/signup', async (req, res) => {
       for (let i = 0; i < arrayOfUsers.length; i++) {
         res.send(arrayOfUsers[i])
         res.sendStatus(200)
-        
       }
     }
-
   } else if (!login) {
     res.send('Enter login')
   } else if (!password) {
@@ -90,9 +91,17 @@ app.post('/signup', async (req, res) => {
   if (!req.body) return res.sendStatus(400);
 })
 
+// User sign in
 app.post(`/signin`, async (req, res) => {
   let {login, password} = req.body
-  const validPassword = await bcrypt.compare(password, signUpHash);
+
+  let oldHash = ''
+
+  for (let i = 0; i < arrayOfUsers.length; i++) {
+    oldHash = arrayOfUsers[i].password
+  }
+  
+  const validPassword = await bcrypt.compare(password, oldHash)
 
   try {
     if (isSignedUp === true) {
@@ -126,37 +135,71 @@ app.post(`/signin`, async (req, res) => {
   if (!req.body) return res.sendStatus(400);
 })
 
+// Get all users
 app.get('/getUsersArray', (_req, res) => {
   res.send(arrayOfUsers)
   res.sendStatus = 200
 })
 
+// Get products
 app.get('/getProducts', (_req, res) => {
   res.send(arrayOfGames)
   res.sendStatus = 200
 })
 
+// Change password
 app.post('/changePassword', async (req, res) => {
   let { password } = req.body
-  res.send(`Your pass is - ${password}`)
+  const salt = await bcrypt.genSalt(10)
+  newPassHash = await bcrypt.hash(password, salt)
 
-  // const correctPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g.test(password)
-  // const salt = await bcrypt.genSalt(10)
-  // const validPassword = await bcrypt.compare(newPassword, password)
+  const correctPass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g.test(password)
 
-  // for (let i = 0; i < arrayOfUsers.length; i++) {
-  //   let oldPasswordHash = arrayOfUsers[i].password 
-  // }
+  let oldPassword = null
+  for (let i = 0; i < arrayOfUsers.length; i++) {
+    oldPassword = arrayOfUsers[i].password
+  }
 
+  const samePassword = await bcrypt.compare(oldPassword, newPassHash)
 
-  // if (password) {
-  //   if (!correctPass) {
-  //     res.send('Password must contain minimum eight characters, at least one letter and one number')
-  //   } else if (correctPass) {
-  //     res.send('Password changed successfully')
-  //   }
-  // } else if (!password) {
-  //   res.send('Enter data')
-  // }
-  // res.sendStatus = 200
+  if (password) {
+    if (!correctPass) {
+      res.send('Password must contain minimum eight characters, at least one letter and one number')
+    } else if (correctPass) {
+      if (!samePassword) {
+        for (let i = 0; i < arrayOfUsers.length; i++) {
+          arrayOfUsers[i].password = newPassHash
+          res.send(`Your password has been changed`)
+        }
+      } else if (samePassword) {
+        res.send(`This is your old password`)
+      }
+    }
+  } else if (!password) {
+    res.send('Enter data')
+  }
+  res.sendStatus = 200
+})
+
+// Set profile (change login and add profile description)
+app.post('/saveProfile', (req, res) => {
+  let { newLogin, description, userImage } = req.body
+
+  if (newLogin && description) {
+    for (let i = 0; i < arrayOfUsers.length; i++) {
+      arrayOfUsers[i].login = newLogin
+      arrayOfUsers[i].description = description
+      arrayOfUsers[i].userImage = userImage
+      res.send(arrayOfUsers[i])
+      res.sendStatus = 200
+    }
+  } else if (!newLogin && !description) {
+    res.send(`Enter data`)
+  }
+})
+
+// Get profile 
+app.get('/getProfile', (_req, res) => {
+  res.send(arrayOfUsers)
+  res.sendStatus(200)
 })
