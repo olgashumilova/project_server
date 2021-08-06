@@ -57,5 +57,25 @@
         "price": 50,
         "image": "https://upload.wikimedia.org/wikipedia/ru/b/bb/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D0%B8%D0%B3%D1%80%D1%8B_Cyberpunk_2077.jpg",
         "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification."
+    },
+
+    {
+        "id": 7,
+        "name": "Far Cry 5",
+        "ageLimit": "18 +",
+        "rating": 4,
+        "price": 18,
+        "image": "https://upload.wikimedia.org/wikipedia/ru/4/42/Far_Cry_5_cover.png",
+        "description": "Hope County is the land of the free and the brave but also home to a fanatical doomsday cult known as Eden’s Gate. Stand up to cult leader Joseph Seed, and his siblings, the Heralds, to spark the fires of resistance and liberate the besieged community."
+    },
+
+    {
+        "id": 8,
+        "name": "Grand Theft Auto V",
+        "ageLimit": "18 +",
+        "rating": 5,
+        "price": 18,
+        "image": "https://upload.wikimedia.org/wikipedia/ru/c/c8/GTAV_Official_Cover_Art.jpg",
+        "description": "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions—linear scenarios with set objectives—to progress through the story. Outside of the missions, players may freely roam the open world."
     }
 ]
