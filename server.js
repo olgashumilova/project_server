@@ -48,7 +48,7 @@ app.get('/getTopGames', (req, res) => {
     if (arrayOfGames[i].rating === 5) {
       count++
       topGames.push(arrayOfGames[i])
-      if (count > 3) break
+      if (count >= 3) break
     }
   }
   res.send(topGames)
@@ -71,6 +71,10 @@ app.post('/signup', async (req, res) => {
       if (login === arrayOfUsers[i].login) {
         res.send('This login is already taken')
       }
+    }
+
+    if (login.length > 8) {
+      res.send('Login can\'be more than 8 characters')
     }
     
     if (!correctPass) {
@@ -109,6 +113,10 @@ app.post(`/signin`, async (req, res) => {
       if (!login && !password) {
         res.send('Enter data')
       } else if (login && password) {
+        if (login.length > 8) {
+          res.send('Login can\'be more than 8 characters')
+        }
+        
         for (let i = 0; i < arrayOfUsers.length; i++) {
           if (arrayOfUsers[i].login !== login) {
             res.send('This user doesn\'t exist')
@@ -184,7 +192,7 @@ app.post('/changePassword', async (req, res) => {
 // Set profile (change login and add profile description)
 app.post('/saveProfile', (req, res) => {
   let { newLogin, description, userImage } = req.body
-
+  
   if (newLogin && description) {
     for (let i = 0; i < arrayOfUsers.length; i++) {
       arrayOfUsers[i].login = newLogin
