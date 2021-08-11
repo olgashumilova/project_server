@@ -36,7 +36,45 @@ app.get(`/search/:text`, (req, res) => {
   })
   res.send(arrOfNames)
   res.sendStatus = 200
-  if (!req.body) return res.sendStatus(400);
+})
+
+//Search by pc games
+app.get(`/pcgames/:text`, (req, res) => {
+  let userText = req.params.text.toLowerCase()
+  let pcGamesArray = arrayOfGames.filter((game) => game.platform.pc )
+
+  let pcGames = pcGamesArray.filter(game => {
+    const res = game.name.toLowerCase().includes(userText);
+    return res;
+  })
+  res.send(pcGames)
+  res.sendStatus = 200
+})
+
+//Search by playstation games
+app.get(`/playstationgames/:text`, (req, res) => {
+  let userText = req.params.text.toLowerCase()
+  let pcGamesArray = arrayOfGames.filter((game) => game.platform.playstation )
+
+  let pcGames = pcGamesArray.filter(game => {
+    const res = game.name.toLowerCase().includes(userText);
+    return res;
+  })
+  res.send(pcGames)
+  res.sendStatus = 200
+})
+
+//Search by xbox games
+app.get(`/xboxgames/:text`, (req, res) => {
+  let userText = req.params.text.toLowerCase()
+  let pcGamesArray = arrayOfGames.filter((game) => game.platform.xbox )
+
+  let pcGames = pcGamesArray.filter(game => {
+    const res = game.name.toLowerCase().includes(userText);
+    return res;
+  })
+  res.send(pcGames)
+  res.sendStatus = 200
 })
 
 // Get top games and render on UI
