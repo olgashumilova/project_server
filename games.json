@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Overwatch",
-        "ageLimit": "12 +",
+        "ageLimit": 12,
         "rating": 5,
         "price": 20,
         "genre": "Shooter",
@@ -14,7 +14,7 @@
     {
         "id": 2,
         "name": "Minecraft",
-        "ageLimit": "3 +",
+        "ageLimit": 3,
         "rating": 4,
         "price": 8,
         "genre": "Sandbox",
@@ -26,7 +26,7 @@
     {
         "id": 3,
         "name": "Terraria",
-        "ageLimit": "6 +",
+        "ageLimit": 6,
         "rating": 4,
         "price": 15,
         "genre": "Sandbox",
@@ -38,7 +38,7 @@
     {
         "id": 4,
         "name": "The Witcher 3: Wild Hunt",
-        "ageLimit": "16 +",
+        "ageLimit": 16,
         "rating": 5,
         "price": 30,
         "genre": "RPG",
@@ -50,7 +50,7 @@
     {
         "id": 5,
         "name": "Assassin's Creed Valhalla",
-        "ageLimit": "18 +",
+        "ageLimit": 18,
         "rating": 5,
         "price": 25,
         "genre": "Action-adventure",
@@ -62,7 +62,7 @@
     {
         "id": 6,
         "name": "Cyberpunk 2077",
-        "ageLimit": "18 +",
+        "ageLimit": 18,
         "rating": 3,
         "price": 18,
         "genre": "Shooter",
@@ -74,7 +74,7 @@
     {
         "id": 7,
         "name": "Far Cry 5",
-        "ageLimit": "18 +",
+        "ageLimit": 18,
         "rating": 4,
         "price": 18,
         "genre": "Shooter",
@@ -86,7 +86,7 @@
     {
         "id": 8,
         "name": "Grand Theft Auto V",
-        "ageLimit": "18 +",
+        "ageLimit": 18,
         "rating": 5,
         "price": 10,
         "genre": "Action-adventure",
@@ -98,7 +98,7 @@
     {
         "id": 9,
         "name": "Sims 4",
-        "ageLimit": "12 +",
+        "ageLimit": 12,
         "rating": 4,
         "price": 40,
         "genre": "Simulator",
@@ -110,7 +110,7 @@
     {
         "id": 10,
         "name": "Cooking Mama: Cookstar",
-        "ageLimit": "3 +",
+        "ageLimit": 3,
         "rating": 4,
         "price": 14,
         "genre": "Simulator",
