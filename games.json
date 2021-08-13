@@ -8,7 +8,8 @@
         "genre": "Shooter",
         "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
         "image": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
-        "description": "Overwatch is a colorful team-based action game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat."
+        "description": "Overwatch is a colorful team-based action game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat.",
+        "amount": 1
     },
 
     {
@@ -20,7 +21,8 @@
         "genre": "Sandbox",
         "platform": {"pc": "pc"},
         "image": "https://www.minecraft.net/content/dam/minecraft/home/Games_Subnav_Minecraft-228x350.png",
-        "description": "Minecraft is a sandbox game. There is a virtual land where users can create their own worlds and experiences, using building blocks, resources discovered on the site and their own creativity."
+        "description": "Minecraft is a sandbox game. There is a virtual land where users can create their own worlds and experiences, using building blocks, resources discovered on the site and their own creativity.",
+        "amount": 1
     },
 
     {
@@ -32,7 +34,8 @@
         "genre": "Sandbox",
         "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
         "image": "https://cdn.kanobu.ru/c/7b6e22e0e976b3d2fb7559d81509e252/400x510/cdn.kanobu.ru/games/11098/cf8f300f-8d65-495b-9b41-78654a988302.jpg",
-        "description": "Terraria is a 2D sandbox game with gameplay that revolves around exploration, building, crafting, combat, survival, and mining, playable in both single-player and multiplayer modes."
+        "description": "Terraria is a 2D sandbox game with gameplay that revolves around exploration, building, crafting, combat, survival, and mining, playable in both single-player and multiplayer modes.",
+        "amount": 1
     },
 
     {
@@ -44,7 +47,8 @@
         "genre": "RPG",
         "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
         "image": "http://s.gamer-info.com/gl/t/h/e/w/the-witcher-3-wild-hunt_ba.jpg",
-        "description": "The Witcher 3: Wild Hunt is an action role-playing game with a third-person perspective. Players control Geralt of Rivia, a monster slayer known as a Witcher."
+        "description": "The Witcher 3: Wild Hunt is an action role-playing game with a third-person perspective. Players control Geralt of Rivia, a monster slayer known as a Witcher.",
+        "amount": 1
     },
 
     {
@@ -56,7 +60,8 @@
         "genre": "Action-adventure",
         "platform": {"playstation": "playstation"},
         "image": "https://upload.wikimedia.org/wikipedia/ru/2/26/AC_Valhalla_standard_edition.jpg",
-        "description": "In Assassin's Creed Valhalla, become Eivor, a legendary Viking raider on a quest for glory. Explore a dynamic and beautiful open world set against the brutal backdrop of England's Dark Ages."
+        "description": "In Assassin's Creed Valhalla, become Eivor, a legendary Viking raider on a quest for glory. Explore a dynamic and beautiful open world set against the brutal backdrop of England's Dark Ages.",
+        "amount": 1
     },
 
     {
@@ -68,7 +73,8 @@
         "genre": "Shooter",
         "platform": {"pc": "pc"},
         "image": "https://upload.wikimedia.org/wikipedia/ru/b/bb/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B9_%D0%B8%D0%B3%D1%80%D1%8B_Cyberpunk_2077.jpg",
-        "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification."
+        "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification.",
+        "amount": 1
     },
 
     {
@@ -80,7 +86,8 @@
         "genre": "Shooter",
         "platform": {"playstation": "playstation", "xbox": "xbox"},
         "image": "https://upload.wikimedia.org/wikipedia/ru/4/42/Far_Cry_5_cover.png",
-        "description": "Hope County is the land of the free and the brave but also home to a fanatical doomsday cult known as Eden’s Gate. Stand up to cult leader and his siblings to liberate the besieged community."
+        "description": "Hope County is the land of the free and the brave but also home to a fanatical doomsday cult known as Eden’s Gate. Stand up to cult leader and his siblings to liberate the besieged community.",
+        "amount": 1
     },
 
     {
@@ -92,7 +99,8 @@
         "genre": "Action-adventure",
         "platform": {"xbox": "xbox"},
         "image": "https://upload.wikimedia.org/wikipedia/ru/c/c8/GTAV_Official_Cover_Art.jpg",
-        "description": "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions — linear scenarios — to progress through the story"
+        "description": "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions — linear scenarios — to progress through the story",
+        "amount": 1
     },
 
     {
@@ -104,7 +112,8 @@
         "genre": "Simulator",
         "platform": {"pc": "pc", "xbox": "xbox"},
         "image": "https://upload.wikimedia.org/wikipedia/ru/5/5e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_The_Sims_4.jpeg",
-        "description": "Explore and customize every detail, from Sims to homes and much more. Choose how Sims look, act, and dress. Determine how they’ll live out each day."
+        "description": "Explore and customize every detail, from Sims to homes and much more. Choose how Sims look, act, and dress. Determine how they’ll live out each day.",
+        "amount": 1
     },
 
     {
@@ -116,7 +125,8 @@
         "genre": "Simulator",
         "platform": {"playstation": "playstation", "xbox": "xbox"},
         "image": "https://delistedgames.com/wp-content/uploads/2020/04/cookingmamacookstar.jpg",
-        "description": "This is a cooking simulation game in which players create and prepare dishes by completing cooking tasks (e.g., chopping, grating, fileting, frying)"
+        "description": "This is a cooking simulation game in which players create and prepare dishes by completing cooking tasks (e.g., chopping, grating, fileting, frying)",
+        "amount": 1
     }
     
 ]
