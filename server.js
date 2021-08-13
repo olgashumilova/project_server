@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt');
 const app = express()
 const arrayOfGames = require('./games.json')
@@ -77,6 +76,13 @@ app.get(`/xboxgames/:text`, (req, res) => {
   res.sendStatus = 200
 })
 
+// Order 
+app.post(`/order`, (req, res) => {
+  let { cart } = req.body
+  res.send('Thank you for order!')
+  res.sendStatus = 200
+})
+
 // Get top games and render on UI
 app.get('/getTopGames', (req, res) => {
   let topGames = []
@@ -136,7 +142,6 @@ app.post('/signup', async (req, res) => {
 // User sign in
 app.post(`/signin`, async (req, res) => {
   let {login, password} = req.body
-
   let oldHash = ''
 
   for (let i = 0; i < arrayOfUsers.length; i++) {
@@ -171,6 +176,11 @@ app.post(`/signin`, async (req, res) => {
         res.send('Enter password')
       }
 
+    } else if (login === 'admin' && password === '123admin') {
+      arrayOfUsers.push({id: arrayOfUsers.length, login: login, isSignedUp: true, password: '123admin'})
+      for (let i = 0; i < arrayOfUsers.length; i++) {
+        res.send(arrayOfUsers[i])
+      }
     } else {
       res.send('Sign up first')
     }
@@ -190,6 +200,34 @@ app.get('/getUsersArray', (_req, res) => {
 // Get products
 app.get('/getProducts', (_req, res) => {
   res.send(arrayOfGames)
+  res.sendStatus = 200
+})
+
+// Add new game
+app.post('/product', (req, res) => {
+  let {
+    gameName,
+    genre,
+    price,
+    gameImage,
+    description,
+    ageLimit,
+    platform} = req.body
+
+  arrayOfGames.push({
+    id: arrayOfGames.length,
+    name: gameName,
+    ageLimit: ageLimit,
+    // rating: 5,
+    price: price,
+    genre: genre, 
+    platform: platform, 
+    image: gameImage,
+    description: description,
+    // amount: 1,
+  })
+
+  res.send(`New game id is: ${gameName}`)
   res.sendStatus = 200
 })
 
