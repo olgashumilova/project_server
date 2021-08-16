@@ -215,7 +215,7 @@ app.post('/product', (req, res) => {
     platform} = req.body
 
   arrayOfGames.push({
-    id: arrayOfGames.length,
+    id: arrayOfGames.length + 1,
     name: gameName,
     ageLimit: ageLimit,
     // rating: 5,
@@ -227,7 +227,7 @@ app.post('/product', (req, res) => {
     // amount: 1,
   })
 
-  res.send(`New game id is: ${gameName}`)
+  res.send(arrayOfGames)
   res.sendStatus = 200
 })
 
