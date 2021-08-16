@@ -127,6 +127,45 @@
         "image": "https://delistedgames.com/wp-content/uploads/2020/04/cookingmamacookstar.jpg",
         "description": "This is a cooking simulation game in which players create and prepare dishes by completing cooking tasks (e.g., chopping, grating, fileting, frying)",
         "amount": 1
+    },
+
+    {
+        "id": 11,
+        "name": "DOOM 3",
+        "ageLimit": 16,
+        "rating": 5,
+        "price": 40,
+        "genre": "Shooter",
+        "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
+        "image": "https://upload.wikimedia.org/wikipedia/ru/thumb/4/4e/Doom3box.jpg/274px-Doom3box.jpg",
+        "description": "This is a first-person shooter in which players assume the role of a marine battling a demonic invasion at a Mars base. Players use big variety of guns to kill mutants and demonic creatures.",
+        "amount": 1
+    },
+
+    {
+        "id": 12,
+        "name": "Epic Shef",
+        "ageLimit": 12,
+        "rating": 4,
+        "price": 12,
+        "genre": "Simulator",
+        "platform": {"pc": "pc"},
+        "image": "https://torrents-igruha.org/uploads/posts/2021-01/1611444215_25.jpg",
+        "description": "This is an adventure game in which players assume the role of a young chef exploring the land, harvesting crops, and cooking dishes to battle in culinary duels.",
+        "amount": 1
+    },
+
+    {
+        "id": 13,
+        "name": "Life is Strange: Before the storm",
+        "ageLimit": 16,
+        "rating": 4,
+        "price": 12,
+        "genre": "Action-adventure",
+        "platform": {"pc": "pc", "playstation": "playstation"},
+        "image": "https://upload.wikimedia.org/wikipedia/ru/0/0e/Life_Is_Strange_Before_The_Storm.jpg",
+        "description": "It is a game in which players assume the role of a high-school student investigating a family secret. Players are presented with various dialogue choices that change the course of the narrative.",
+        "amount": 1
     }
     
 ]
