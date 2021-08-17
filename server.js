@@ -191,12 +191,6 @@ app.post(`/signin`, async (req, res) => {
   if (!req.body) return res.sendStatus(400);
 })
 
-// Get all users
-app.get('/getUsersArray', (_req, res) => {
-  res.send(arrayOfUsers)
-  res.sendStatus = 200
-})
-
 // Get products
 app.get('/getProducts', (_req, res) => {
   res.send(arrayOfGames)
@@ -207,28 +201,102 @@ app.get('/getProducts', (_req, res) => {
 app.post('/product', (req, res) => {
   let {
     gameName,
-    genre,
-    price,
+    gameGenre,
+    gamePrice,
     gameImage,
-    description,
-    ageLimit,
-    platform} = req.body
+    gameDescription,
+    gameAgeLimit,
+    gamePlatform} = req.body
+
+    let arrOfKeys = gamePlatform
+    let object
+
+    for (let i = 0; i < arrOfKeys.length; i++) {
+      object = Object.keys(arrOfKeys[i])
+      i++
+    }
+    res.send(object)
 
   arrayOfGames.push({
     id: arrayOfGames.length + 1,
     name: gameName,
-    ageLimit: ageLimit,
-    // rating: 5,
-    price: price,
-    genre: genre, 
-    platform: platform, 
+    ageLimit: gameAgeLimit,
+    price: gamePrice,
+    genre: gameGenre, 
+    platform: gamePlatform, 
     image: gameImage,
-    description: description,
-    // amount: 1,
+    description: gameDescription,
   })
 
   res.send(arrayOfGames)
   res.sendStatus = 200
+})
+
+// Edit game
+app.put('/product', (req, res) => {
+  let {
+    gameName,
+    gameGenre,
+    gamePrice,
+    gameImage,
+    gameDescription,
+    gameAgeLimit,
+    gamePlatform 
+  } = req.body
+
+    for (let i = 0; i < arrayOfGames.length; i++) {
+      // Edit name
+      if (arrayOfGames[i].name !== gameName) {
+        arrayOfGames[i].name = gameName
+        res.send(arrayOfGames[i])
+      }
+
+      // Edit genre
+      if (arrayOfGames[i].genre !== gameGenre) {
+        arrayOfGames[i].genre = gameGenre
+        res.send(arrayOfGames[i])
+      }
+
+      // Edit price
+      if (arrayOfGames[i].price !== gamePrice) {
+        arrayOfGames[i].price = gamePrice
+        res.send(arrayOfGames[i])
+      }
+
+      // Edit image
+      if (arrayOfGames[i].image !== gameImage) {
+        arrayOfGames[i].image = gameImage
+        res.send(arrayOfGames[i])
+      }
+
+      // Edit description
+      if (arrayOfGames[i].description !== gameDescription) {
+        arrayOfGames[i].description = gameDescription
+        res.send(arrayOfGames[i])
+      }
+
+      // Edit age limit
+      if (arrayOfGames[i].ageLimit !== gameAgeLimit) {
+        arrayOfGames[i].ageLimit = gameAgeLimit
+        res.send(arrayOfGames[i])
+      }
+
+      // Edit platform
+      if (arrayOfGames[i].platform !== gamePlatform) {
+        arrayOfGames[i].platform = gamePlatform
+        res.send(arrayOfGames[i])
+      }
+
+      res.send(arrayOfGames[i])
+    }
+})
+
+// Delete game
+app.delete('/product/:id', (req, res) => {
+  const { id } = req.params;
+  const productIndex = arrayOfGames.findIndex(game => game.id == id);
+  arrayOfGames.splice(productIndex, 1);
+  res.send(arrayOfGames);
 })
 
 // Change password
