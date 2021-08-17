@@ -166,6 +166,96 @@
         "image": "https://upload.wikimedia.org/wikipedia/ru/0/0e/Life_Is_Strange_Before_The_Storm.jpg",
         "description": "It is a game in which players assume the role of a high-school student investigating a family secret. Players are presented with various dialogue choices that change the course of the narrative.",
         "amount": 1
-    }
+    },
+
+    {
+        "id": 14,
+        "name": "The Elder Scrolls V: Skyrim",
+        "ageLimit": 16,
+        "rating": 5,
+        "price": 35,
+        "genre": "RPG",
+        "platform": {"playstation": "playstation", "xbox": "xbox"},
+        "image": "https://upload.wikimedia.org/wikipedia/ru/3/3a/The_Elder_Scrolls_V_-_Skyrim.jpg",
+        "description": "The game's main story revolves around the player's character, the Dragonborn, on their quest to defeat Alduin the World-Eater, a dragon who is prophesied to destroy the world.",
+        "amount": 1
+    },
+
+    {
+        "id": 15,
+        "name": "Apex Legends",
+        "ageLimit": 12,
+        "rating": 3,
+        "price": 15,
+        "genre": "Shooter",
+        "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
+        "image": "https://upload.wikimedia.org/wikipedia/ru/1/17/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Apex_Legends.jpg",
+        "description": "Apex Legends is an online multiplayer battle royale game featuring squads of three players using pre-made characters with distinctive abilities, similar to those of hero shooters.",
+        "amount": 1
+    },
+
+    {
+        "id": 16,
+        "name": "Mass Effect: Legendary Edition",
+        "ageLimit": 16,
+        "rating": 5,
+        "price": 45,
+        "genre": "RPG",
+        "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
+        "image": "https://cdn-products.eneba.com/resized-products/q7LfT94FS4Fc5KomlwjjI_pJxUyWdneCLgsWqqRRuAQ_350x200_1x-0.jpeg",
+        "description": "The Mass Effect™ Legendary Edition includes single-player base content and over 40 DLC from Mass Effect, Mass Effect 2, and Mass Effect 3 games, including promo weapons and armors",
+        "amount": 1
+    },
+
+    {
+        "id": 17,
+        "name": "F1 2021",
+        "ageLimit": 6,
+        "rating": 4,
+        "price": 59,
+        "genre": "Simulator",
+        "platform": {"pc": "pc"},
+        "image": "https://s1.gaming-cdn.com/images/products/8970/271x377/f1-2021-xbox-one-xbox-series-xs-cover.jpg",
+        "description": "Enjoy the stunning new features of F1® 2021, including the thrilling story experience ‘Braking Point’, two-player Career, and get even closer to the grid with ‘Real-Season Start’.",
+        "amount": 1
+    },
     
+    {
+        "id": 18,
+        "name": "Call of Duty: Modern Warfare",
+        "ageLimit": 18,
+        "rating": 2,
+        "price": 49,
+        "genre": "Shooter",
+        "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
+        "image": "https://u.kanobu.ru/games/80639295-496e-4eff-880c-7046004b021c.jpg",
+        "description": "Call of Duty: Modern Warfare is a first-person shooter video game developed by Infinity Ward for the Xbox One, PlayStation 4 and Windows. It is a reboot of the original Modern Warfare trilogy.",
+        "amount": 1
+    },
+
+    {
+        "id": 19,
+        "name": "Hitman",
+        "ageLimit": 16,
+        "rating": 5,
+        "price": 25,
+        "genre": "Action-adventure",
+        "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
+        "image": "https://upload.wikimedia.org/wikipedia/ru/thumb/4/4b/Hitman_3_Packart.jpg/1200px-Hitman_3_Packart.jpg",
+        "description": "Hitman is a stealth video game in which players control a genetically enhanced assassin from a third-person perspective as he carries out assassinations of various targets across the globe.",
+        "amount": 1
+    },
+
+    {
+        "id": 20,
+        "name": "Rust",
+        "ageLimit": 18,
+        "rating": 5,
+        "price": 30,
+        "genre": "Sandbox",
+        "platform": {"pc": "pc", "playstation": "playstation", "xbox": "xbox"},
+        "image": "https://n8x3c6t6.stackpathcdn.com/wp-content/uploads/2020/09/hoiOOIM_350x200_1x-0.jpg",
+        "description": "The only aim in Rust is to survive. Everything wants you to die - the island’s wildlife and other inhabitants, the environment, other survivors. Do whatever it takes to last another night.",
+        "amount": 1
+    }
 ]
