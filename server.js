@@ -204,18 +204,11 @@ app.post('/product', (req, res) => {
     gameGenre,
     gamePrice,
     gameImage,
+    gameRating,
     gameDescription,
     gameAgeLimit,
-    gamePlatform} = req.body
-
-    let arrOfKeys = gamePlatform
-    let object
-
-    for (let i = 0; i < arrOfKeys.length; i++) {
-      object = Object.keys(arrOfKeys[i])
-      i++
-    }
-    res.send(object)
+    gamePlatform
+  } = req.body
 
   arrayOfGames.push({
     id: arrayOfGames.length + 1,
@@ -225,70 +218,43 @@ app.post('/product', (req, res) => {
     genre: gameGenre, 
     platform: gamePlatform, 
     image: gameImage,
+    rating: gameRating,
     description: gameDescription,
   })
 
-  res.send(arrayOfGames)
+  res.send(arrayOfGames[arrayOfGames.length - 1])
   res.sendStatus = 200
 })
 
 // Edit game
 app.put('/product', (req, res) => {
   let {
+    gameId,
     gameName,
     gameGenre,
     gamePrice,
     gameImage,
+    gameRating,
     gameDescription,
     gameAgeLimit,
     gamePlatform 
   } = req.body
 
-    for (let i = 0; i < arrayOfGames.length; i++) {
-      // Edit name
-      if (arrayOfGames[i].name !== gameName) {
-        arrayOfGames[i].name = gameName
-        res.send(arrayOfGames[i])
-      }
+  const element = arrayOfGames.findIndex((game) => game.id === gameId)
 
-      // Edit genre
-      if (arrayOfGames[i].genre !== gameGenre) {
-        arrayOfGames[i].genre = gameGenre
-        res.send(arrayOfGames[i])
-      }
+  arrayOfGames[element] = {
+    id: element,
+    name: gameName,
+    genre: gameGenre,
+    price: gamePrice,
+    image: gameImage,
+    rating: gameRating,
+    description: gameDescription,
+    ageLimit: gameAgeLimit,
+    platform: gamePlatform,
+  }
 
-      // Edit price
-      if (arrayOfGames[i].price !== gamePrice) {
-        arrayOfGames[i].price = gamePrice
-        res.send(arrayOfGames[i])
-      }
-
-      // Edit image
-      if (arrayOfGames[i].image !== gameImage) {
-        arrayOfGames[i].image = gameImage
-        res.send(arrayOfGames[i])
-      }
-
-      // Edit description
-      if (arrayOfGames[i].description !== gameDescription) {
-        arrayOfGames[i].description = gameDescription
-        res.send(arrayOfGames[i])
-      }
-
-      // Edit age limit
-      if (arrayOfGames[i].ageLimit !== gameAgeLimit) {
-        arrayOfGames[i].ageLimit = gameAgeLimit
-        res.send(arrayOfGames[i])
-      }
-
-      // Edit platform
-      if (arrayOfGames[i].platform !== gamePlatform) {
-        arrayOfGames[i].platform = gamePlatform
-        res.send(arrayOfGames[i])
-      }
-
-      res.send(arrayOfGames[i])
-    }
+  res.send(arrayOfGames)
 })
 
 // Delete game
