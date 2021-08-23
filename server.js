@@ -83,7 +83,7 @@ app.post(`/order`, (req, res) => {
   res.sendStatus = 200
 })
 
-// Get top games and render on UI
+// Get 3 top games
 app.get('/getTopGames', (req, res) => {
   let topGames = []
   let count = 0;
@@ -196,6 +196,13 @@ app.get('/getProducts', (_req, res) => {
   res.send(arrayOfGames)
   res.sendStatus = 200
 })
+
+// Get recent products
+app.get('/getRecentProducts', (_req, res) => {
+  res.send(arrayOfGames.slice(Math.max(arrayOfGames.length - 3, 0)))
+  res.sendStatus = 200
+})
+
 
 // Add new game
 app.post('/product', (req, res) => {
