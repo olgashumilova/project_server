@@ -306,11 +306,31 @@ app.post('/changePassword', async (req, res) => {
   res.sendStatus = 200
 })
 
-// Set profile (change login and add profile description)
+// Set profile (change login, profile description and user picture)
 app.post('/saveProfile', (req, res) => {
   let { newLogin, description, userImage } = req.body
   
-  if (newLogin && description) {
+  if (newLogin || description || userImage) {
+    if (newLogin) {
+      for (let i = 0; i < arrayOfUsers.length; i++) {
+        arrayOfUsers[i].login = newLogin
+        res.send(arrayOfUsers[i])
+        res.sendStatus = 200
+      }
+    } else if (description) {
+      for (let i = 0; i < arrayOfUsers.length; i++) {
+        arrayOfUsers[i].description = description
+        res.send(arrayOfUsers[i])
+        res.sendStatus = 200
+      }
+    } else if (userImage) {
+      for (let i = 0; i < arrayOfUsers.length; i++) {
+        arrayOfUsers[i].userImage = userImage
+        res.send(arrayOfUsers[i])
+        res.sendStatus = 200
+      }
+    }
+  } else if (newLogin && description && userImage) {
     for (let i = 0; i < arrayOfUsers.length; i++) {
       arrayOfUsers[i].login = newLogin
       arrayOfUsers[i].description = description
@@ -318,7 +338,7 @@ app.post('/saveProfile', (req, res) => {
       res.send(arrayOfUsers[i])
       res.sendStatus = 200
     }
-  } else if (!newLogin && !description) {
+  } else if (!newLogin && !description && !userImage) {
     res.send(`Enter data`)
   }
 })
