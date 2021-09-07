@@ -118,7 +118,7 @@ app.post('/signup', async (req, res) => {
     }
 
     if (login.length > 8) {
-      res.send('Login can\'be more than 8 characters')
+      res.send('Login can\'t be more than 8 characters')
     }
     
     if (!correctPass) {
